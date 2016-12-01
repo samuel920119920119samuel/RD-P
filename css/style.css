@@ -1,0 +1,415 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+/*********************************************************************************/
+/*          log in          */
+/*********************************************************************************/
+
+.alert{
+	margin-bottom: 0 !important;
+}
+
+.loginPage{
+	background-image: url(../image/bg.jpg) !important;
+	background-size: cover;
+    background-position: top center;
+}
+
+.loginPage .jumbotron{
+	/*background: #EECDA3;
+	background: -webkit-linear-gradient(to left, #EECDA3 , #EF629F); 
+	background: linear-gradient(to left, #EECDA3 , #EF629F); */
+	margin:0;
+}
+
+
+
+.loginPage .title{
+	text-align: center;
+	color:#FCFCFC;
+    font-family: "微軟正黑體", Helvetica, sans-serif;
+    font-weight: 700;
+	margin-bottom: 1.5em;
+	text-shadow:1px 2px 2px #4F4F4F;
+}
+
+.loginPage .form-control{
+	width: 80%;
+	margin-bottom: 4em;
+}
+
+.loginPage .form_login{
+	opacity:0.8;
+	width: 60%;
+	padding:3em;
+	margin-bottom: 2em;
+	background-color: #F0F0F0;
+	border: 1px solid;
+	border-radius:10px;
+	margin:auto;
+}
+
+
+.loginPage label{
+	text-align: left;
+	color:#444;
+	display: block;
+	font-size: 14pt;
+    font-family: "Raleway", Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.loginPage button{
+	text-align: left;
+	color:#444;
+	display: block;
+	font-size: 14pt;
+    font-family: "Raleway", Helvetica, sans-serif;
+    font-weight: 600;
+}
+/*********************************************************************************/
+/*        	footer          */
+/*********************************************************************************/
+
+footer
+{
+	padding: 2em 0em;
+}
+
+#footer
+{
+	border-top: 1px solid;
+	border-color: rgba(255,255,255,.05);
+	position: relative;
+	text-align: center;
+    color: rgba(255, 255, 255, 0.65);
+    font-family: "微軟正黑體", Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+#footer header h2
+{
+	color: #FFF !important;
+}
+
+#footer header .byline
+{
+	color: rgba(255,255,255,.2);
+}
+
+/*********************************************************************************/
+/*          admin          */
+/*********************************************************************************/
+
+.adminPage{
+	padding-top: 70px;
+}
+
+
+.adminPage li{
+	padding: 0 0.3em;
+}
+
+.navbar-link{
+    color: #333;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.navbar-brand{
+    color: #333;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration:none;
+}
+
+.navbar-collapse{
+	padding:5px 0 !important;  
+}
+
+.adminPage h1{
+	padding: 0.3em 0;
+    color: 	#272727;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 42px;
+    font-weight:550;
+}
+
+/*********************************************************************************/
+/*          adminAdd         */
+/*********************************************************************************/
+
+#addPostForm{
+	margin-top:2em;
+}
+
+#addPostForm label{
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+#addPostForm input{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+}
+
+#addPostForm .form-group{
+    margin-bottom: 2em;
+}
+
+.alert li{
+	margin-left: 2em;
+	list-style-type: disc;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+}
+
+/*********************************************************************************/
+/*          adminList         */
+/*********************************************************************************/
+
+.adminPage .show-more.btn{
+    color: #428bca;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+
+.adminPage .btn-order{
+	font-family: '微軟正黑體', sans-serif;
+    font-size: 14px;
+}
+
+.adminPage tr{
+	height: 58px;
+	padding-bottom: 10px;
+}
+
+.adminPage th{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+}
+
+.adminPage td{
+    font-family: '微軟正黑體', sans-serif;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.adminPage .searchArea{
+	padding: 0.5em 0;
+}
+
+.adminPage .searchArea label{
+    margin-bottom: 5px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+.adminPage p{
+    font-size: 15px;
+    font-weight: 500;
+    font-family: '微軟正黑體', Helvetica, sans-serif;
+    text-align:left !important;
+}
+
+.adminPage #editPostForm{
+    height:550px
+}
+
+.adminPage #editPostForm label{
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #003D79;
+}
+
+.adminPage #editPostForm input{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+}
+
+.adminPage #editPostForm .form-group{
+    margin-bottom: 2em;
+}
+
+.adminPage #viewModal .showContent {
+    font-size: 15px;
+    font-weight: 500;
+    font-family: '微軟正黑體', Helvetica, sans-serif;
+    text-align:left !important;
+    margin-bottom: 10px;
+}
+
+.adminPage #viewModal label{
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color:  #003D79;
+}
+
+.adminPage #viewModal .show{
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-family: '微軟正黑體', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+
+/*********************************************************************************/
+/*          indexPage         */
+/*********************************************************************************/
+
+.indexPage .nav{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 550;
+    font-size: 18px;
+}
+
+.indexPage .nav a:hover{
+    color:;
+}
+
+.indexPage .postBox{
+    height: 180px;
+    display: block;
+    padding: 10px 0;
+    border-bottom: #f1f1f1 solid 1px;
+    position: relative;
+    margin-bottom: 1em;
+}
+
+
+
+.indexPage .postBox .viewTitle{
+    text-indent: 0.5em;
+    font-weight: 500;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 18px;
+    line-height: 1.42857143;
+    color: #004B97;
+    background-color: #E0E0E0;
+    padding: 0.5em 0;
+    text-decoration:none;
+}
+
+.indexPage .postBox .viewTitle:hover{
+    text-decoration:none;
+    color:#cc5050; /* 當滑鼠經過時，超連結文字顏色變成桃紅色 */
+}
+.indexPage .postBox:hover{
+    position: relative; /* 當滑鼠經過超連結時，超連結往右下位移1像素 */
+    top: 1px;
+    left: 1px;
+}
+
+.indexPage  .postBox .viewContent{
+    line-height: 25px;
+    padding-left: 0.5em;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Noto Sans TC', sans-serif;
+    text-align: left;
+    text-overflow: ellipsis;
+}
+
+.indexPage .postBox .viewSource{
+    padding-left: 0.5em;
+    font-weight: 400;
+    color:  #7B7B7B;
+    font-family: 'Noto Sans TC', sans-serif;
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+}
+
+.indexPage .tools{
+    margin-top: 1em;
+}
+
+.indexPage .searchArea{
+    margin-top: 0.5em;
+}
+
+.indexPage #myModalLabel{
+    font-size: 32px;
+    font-weight: 600;
+    border-bottom: #53b7bb solid 3px;
+}
+
+.indexPage #viewModal .showContent {
+    font-size: 15px;
+    font-weight: 500;
+    font-family: '微軟正黑體', Helvetica, sans-serif;
+    text-align:left !important;
+    overflow : hidden;
+    white-space : pre;
+    margin-bottom: 10px;
+}
+
+.show-more-btn:hover {
+    background-color: #5f5e5e;
+}
+
+.show-more-btn {
+    font-size: 11pt;
+    border: solid 1px #444;
+    background-color: #444;
+    color: #fff;
+    font-family: "Raleway", Helvetica, sans-serif;
+    font-weight: 700;
+    height: 2.75em;
+    line-height: 2.75em;
+    padding: 0 1.5em;
+    text-align: center;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+
+/*---------------ryan----------*/
+
+/*bootstrap label*/
+.label{
+  font-size: 15px;
+}
+
+/*bootstrap label*/
+.badge{
+     background-color: LightSeaGreen  ;
+}
+
+/*Source in modal*/
+.indexPage .modal-body .showSource{
+    text-align: right;
+    color: gray;
+}
+
+/*Source in modal*/
+.indexPage .modal-body .showContent{
+    font-family: '微軟正黑體', Helvetica, sans-serif;
+    font-size: 18px;
+    letter-spacing:3px;
+}

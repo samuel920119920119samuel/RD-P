@@ -1,0 +1,99 @@
+var app = angular.module('myApp',["firebase"]);
+
+app.controller("dataController",function($firebaseArray,$scope){
+
+	//制式化:參數填入資料庫url
+	var ref = new Firebase("https://rdo-web.firebaseio.com/");
+	this.data = $firebaseArray(ref);
+
+	//連結資料庫中之子物件
+	this.post = $firebaseArray(ref.child("post"));
+
+	// 分頁排版
+
+
+
+	// ------------------------------------------
+	// 新增公告
+	// ------------------------------------------
+
+	// 取得時間
+	var d = new Date();
+	var hour = d.getMonth() + 1;
+	var date = d.getDate()*1;
+	if ( hour < 10){
+		hour = 0 + hour.toString();
+	}
+	if ( date < 10){
+		date = 0 + date.toString();
+	}
+	var time = d.getFullYear().toString() +  hour + date;
+	console.log(time);
+
+	//取得發文時間
+	getTime = function(){
+		console.log("get Time ~");
+		var d = new Date();
+		var hour = d.getMonth() + 1;
+		var date = d.getDate()*1;
+		if ( hour < 10){
+			hour = 0 + hour.toString();
+		}
+		if ( date < 10){
+			date = 0 + date.toString();
+		}
+		return d.getFullYear() + "." + hour + "." + d.getDate() + " - " +  d.getHours() + ":" + d.getMinutes();
+	}
+
+	// // 建立公告
+	this.newPost={}
+	this.newPost.type=[];
+	this.newPost.subject="";
+	this.newPost.source="";
+	this.newPost.sourceURL="";
+	this.newPost.content="";
+	this.newPost.time="";
+
+	// // 建立當日順序
+	var order;
+	ref.once("value", function(snap) {
+		if ( snap.child('post').child(time).exists() == false ){
+			console.log("not exists");
+			order = 1;	
+	  		ref.child('post').child(time).child(order).set(1);
+		}else{
+	  		order = snap.child('post').child(time).val().order;
+	  	}
+	});
+
+	
+	// 新增
+	this.addpost = function (post) {
+		console.log("yaya");
+		if(post.type!="" && post.subject!="" && post.source!="" && post.sourceURL!="" && post.content!=""){
+
+			this.newPost.type = post.type;
+			this.newPost.subject = post.subject;
+			this.newPost.source = post.source;
+			this.newPost.sourceURL = post.sourceURL;
+			this.newPost.content = post.content;
+			this.newPost.time = getTime();
+
+			console.log("post successful");
+
+			ref.child('post').child(time).child(order).set(this.newPost);
+			this.newPost = {};
+			order = order*1 + 1;
+			// this.post.$add({
+			// 	'type':post.type,
+			// 	'subject':post.subject,
+			// 	'source':post.source,
+			// 	'sourceURL':post.sourceURL,
+			// 	'content':post.content,
+			// 	'time':time
+			// })
+			alert("新增成功");
+		}
+	}
+
+})
