@@ -357,7 +357,7 @@ footer
     border-bottom: #53b7bb solid 3px;
 }
 
-.indexPage #viewModal .showContent {
+/*.indexPage #viewModal .showContent {
     font-size: 15px;
     font-weight: 500;
     font-family: '微軟正黑體', Helvetica, sans-serif;
@@ -365,7 +365,7 @@ footer
     overflow : hidden;
     white-space : pre;
     margin-bottom: 10px;
-}
+}*/
 
 .show-more-btn:hover {
     background-color: #5f5e5e;
@@ -411,5 +411,5 @@ footer
 .indexPage .modal-body .showContent{
     font-family: '微軟正黑體', Helvetica, sans-serif;
     font-size: 18px;
-    letter-spacing:3px;
+    letter-spacing:1px;
 }

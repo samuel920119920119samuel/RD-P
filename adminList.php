@@ -128,7 +128,9 @@
 							            <p class="show">{{detail.source}}</p>
 
 							            <label for="postContent">內容</label>
-							            <p class="showContent">{{detail.content}}</p>
+							            <!-- <p class="showContent">{{detail.content}}</p> -->
+							            <div>{{detail.content}} </div>
+
 
 							            <label for="postTitle">來源連結</label>
 							           	<a href="{{detail.sourceURL}}" target="_blank" class="show">{{detail.sourceURL}}</a>

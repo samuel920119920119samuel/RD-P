@@ -302,4 +302,5 @@ app.controller("dataController",function($firebaseArray,$scope){
 
 
 })
-	
+
+

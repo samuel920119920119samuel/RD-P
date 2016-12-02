@@ -4,11 +4,15 @@
     <title>國立中央大學 - 研究發展處 企劃組</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- bootstrap -->
+    <!-- bootstrap css-->
     <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrap-theme.css" />
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+    <!--bootstrap js-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- <script src="js/skel.min.js"></script> -->
+    <script src="js/skel-panels.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/bootstrap.js"></script>
     <!-- 引入firebase -->
     <script type ="text/javascript" src="js/firebase.js"></script>
     <!-- 引入Angular JS -->
@@ -18,9 +22,7 @@
     <script src="js/app.js"></script>
     <!-- style -->
     <link rel="stylesheet" href="css/style.css" />
-    <noscript>
-      <link rel="stylesheet" href="css/style.css" />
-    </noscript>
+ 
 
 
 </head>
@@ -107,7 +109,7 @@
                                       <p class="showContent">{{detail.content}}</p>
 
                                       <label for="postTitle">來源連結</label>
-                                      <a href="{{detail.sourceURL}}" target="_blank" class="show">{{detail.sourceURL}}</a>
+                                      <a href="{{detail.sourceURL}}">{{detail.sourceURL}}</a>
 
                                   </div>
                                   <div class="modal-footer">
@@ -135,7 +137,7 @@
             </div>
 
             <!-- 高教資訊 -->
-            <div role="tabpanel" class="tab-pane fade in active" id="education" ng-init="dataC.showData2();dataC.order=true;">
+            <div role="tabpanel" class="tab-pane fade" id="education" ng-init="dataC.showData2();dataC.order=true;">
                 <div class="col-md-8">
                     <section ng-repeat="detail in dataC.show2 | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
@@ -193,7 +195,7 @@
             </div>
 
             <!-- 科技政策 -->
-            <div role="tabpanel" class="tab-pane fade in active" id="technology" ng-init="dataC.showData2();dataC.order=true;">
+            <div role="tabpanel" class="tab-pane fade" id="technology" ng-init="dataC.showData2();dataC.order=true;">
                 <div class="col-md-8">
                     <section ng-repeat="detail in dataC.show2 | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
@@ -251,7 +253,7 @@
             </div>
 
             <!-- 大學櫥窗 -->
-            <div role="tabpanel" class="tab-pane fade in" id="college" ng-init="dataC.showData2();dataC.order=true;">
+            <div role="tabpanel" class="tab-pane fade" id="college" ng-init="dataC.showData2();dataC.order=true;">
                 <div class="col-md-8">
                     <section ng-repeat="detail in dataC.show2 | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
@@ -309,7 +311,7 @@
             </div>
 
             <!-- 焦點評論 -->
-            <div role="tabpanel" class="tab-pane fade in" id="highlight" ng-init="dataC.showData2();dataC.order=true;">
+            <div role="tabpanel" class="tab-pane fade" id="highlight" ng-init="dataC.showData2();dataC.order=true;">
                 <div class="col-md-8">
                     <section ng-repeat="detail in dataC.show2 | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
@@ -372,11 +374,7 @@
 </div>
 
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/skel.min.js"></script>
-    <script src="js/skel-panels.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/bootstrap.js"></script>
+    
 </body>
 </html>
 
