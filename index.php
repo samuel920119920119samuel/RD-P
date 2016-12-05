@@ -83,8 +83,8 @@
                 <div class="col-md-8">
                     <section ng-repeat="detail in dataC.show | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
-                        <div class="postBox">
-                            <a class="clickable" href="" data-toggle="modal" data-target="#Show{{detail.$id}}"><p class="viewTitle" ><span class="badge">100</span>{{detail.subject}}</p></a>
+                        <div class="postBox" data-toggle="modal" data-target="#Show{{detail.$id}}">
+                            <p class="viewTitle" ><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>&nbsp;&nbsp;{{detail.subject}}</p>
                             <p class="viewSource" ng-bind="detail.source"></p>
                             <p class="viewContent" ng-bind-html="detail.content| cut:true:108:'...'|trustHtml"></p>
                         </div>
@@ -130,8 +130,19 @@
                         <button class="btn btn-primary btn-order" ng-click="dataC.order=false">由舊到新</button>
                     </div>
                     <!-- 搜尋 -->
-                    <div class="searchArea col-md-offset-2 col-md-8 ">
+                    <div class="searchArea col-md-offset-2 col-md-8 col-md-offset-2">
                           <input type="text" class="form-control col-md-4" placeholder="搜尋標題" ng-model="search.subject">
+                    </div>
+
+                    <div class="col-md-offset-5 col-md-7"><p>link</p></div>  
+                    <div class="btn-group-vertical col-md-offset-3 col-md-6 col-md-offset-3">
+                      <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/business.php#1">本組簡介</button>
+                      <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/member.php#2">成員及職掌</button>
+                      <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/Files/%E4%BC%81%E5%8A%83%E7%B5%84FAQ(103%E5%B9%B4%E7%89%88).docx">校務發展計畫</button>
+                      <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/Project/record.php">校務發展委員會議</button>
+                      <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/Project/newCampus.php">八德校地籌設</button>
+                      <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/self_evaluation/update.php">校務評鑑</button>
+                      <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/Project/integrationGuide.php">教育部統合視導</button>
                     </div>
                 </div>  
             </div>
@@ -141,8 +152,8 @@
                 <div class="col-md-8">
                     <section ng-repeat="detail in dataC.show2 | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
-                        <div class="postBox">
-                            <a class="clickable" href="" data-toggle="modal" data-target="#Show{{detail.$id}}"><p class="viewTitle" ><span class="badge">100</span>{{detail.subject}}</p></a>
+                        <div class="postBox" data-toggle="modal" data-target="#Show{{detail.$id}}">
+                            <p class="viewTitle" ><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>&nbsp;&nbsp;{{detail.subject}}</p>
                             <p class="viewSource" ng-bind="detail.source"></p>
                             <p class="viewContent" ng-bind-html="detail.content| cut:true:108:'...'|trustHtml"></p>
                         </div>
@@ -199,8 +210,8 @@
                 <div class="col-md-8">
                     <section ng-repeat="detail in dataC.show2 | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
-                        <div class="postBox">
-                            <a class="clickable" href="" data-toggle="modal" data-target="#Show{{detail.$id}}"><p class="viewTitle" ><span class="badge">100</span>{{detail.subject}}</p></a>
+                        <div class="postBox" data-toggle="modal" data-target="#Show{{detail.$id}}">
+                            <p class="viewTitle" ><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>&nbsp;&nbsp;{{detail.subject}}</p>
                             <p class="viewSource" ng-bind="detail.source"></p>
                             <p class="viewContent" ng-bind-html="detail.content| cut:true:108:'...'|trustHtml"></p>
                         </div>
@@ -257,8 +268,8 @@
                 <div class="col-md-8">
                     <section ng-repeat="detail in dataC.show2 | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
-                        <div class="postBox">
-                            <a class="clickable" href="" data-toggle="modal" data-target="#Show{{detail.$id}}"><p class="viewTitle" ><span class="badge">100</span>{{detail.subject}}</p></a>
+                        <div class="postBox" data-toggle="modal" data-target="#Show{{detail.$id}}">
+                            <p class="viewTitle" ><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>&nbsp;&nbsp;{{detail.subject}}</p>
                             <p class="viewSource" ng-bind="detail.source"></p>
                             <p class="viewContent" ng-bind-html="detail.content| cut:true:108:'...'|trustHtml"></p>
                         </div>
@@ -315,8 +326,8 @@
                 <div class="col-md-8">
                     <section ng-repeat="detail in dataC.show2 | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
-                        <div class="postBox">
-                            <a class="clickable" href="" data-toggle="modal" data-target="#Show{{detail.$id}}"><p class="viewTitle" ><span class="badge">100</span>{{detail.subject}}</p></a>
+                        <div class="postBox" data-toggle="modal" data-target="#Show{{detail.$id}}">
+                            <p class="viewTitle" ><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>&nbsp;&nbsp;{{detail.subject}}</p>
                             <p class="viewSource" ng-bind="detail.source"></p>
                             <p class="viewContent" ng-bind-html="detail.content| cut:true:108:'...'|trustHtml"></p>
                         </div>

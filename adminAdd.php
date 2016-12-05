@@ -56,6 +56,7 @@
 
 	    	<div class="navbar-header">
 	            <a href="admin.php" class="navbar-brand">管理首頁</a>
+	            <a href="index.php" class="navbar-brand">電子報首頁</a>
 	        </div>
 	        <div class="collapse navbar-collapse" id="com">
 	            <ul class="nav navbar-nav navbar-right">

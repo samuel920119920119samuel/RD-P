@@ -54,6 +54,7 @@
 
 	    	<div class="navbar-header">
 	            <a href="admin.php" class="navbar-brand">管理首頁</a>
+	            <a href="index.php" class="navbar-brand">電子報首頁</a>
 	        </div>
 	        <div class="collapse navbar-collapse" id="com">
 	            <ul class="nav navbar-nav navbar-right">
@@ -210,7 +211,7 @@
  		
 	<!-- bootstrap js -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
+		<!-- <script src="js/skel.min.js"></script> -->
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
 		<script src="js/bootstrap.js"></script>
