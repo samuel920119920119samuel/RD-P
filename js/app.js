@@ -1,5 +1,6 @@
 var app = angular.module('myApp',["firebase"]);
 
+// 擷取前面字當作摘要
 app.filter('cut', function () {
         return function (value, wordwise, max, tail) {
             if (!value) return '';
@@ -23,12 +24,37 @@ app.filter('cut', function () {
             return value + (tail || ' …');
         };
 });
-
+// 輸出轉換依照html標籤
 app.filter('trustHtml', function ($sce) {
         return function (input) {
             return $sce.trustAsHtml(input);
         }
     });
+// CKEDITOR
+app.directive('ckeditor', function() {
+    return {
+        require : '?ngModel',
+        link : function(scope, element, attrs, ngModel) {
+            var ckeditor = CKEDITOR.replace(element[0], {
+                
+            });
+            if (!ngModel) {
+                return;
+            }
+            ckeditor.on('instanceReady', function() {
+                ckeditor.setData(ngModel.$viewValue);
+            });
+            ckeditor.on('pasteState', function() {
+                scope.$apply(function() {
+                    ngModel.$setViewValue(ckeditor.getData());
+                });
+            });
+            ngModel.$render = function(value) {
+                ckeditor.setData(ngModel.$viewValue);
+            };
+        }
+    };
+});
 
 
 app.controller("dataController",function($firebaseArray,$scope){
@@ -104,29 +130,28 @@ app.controller("dataController",function($firebaseArray,$scope){
 
 	
 	// 新增
-	this.addpost = function (content,post) {
-		console.log(content);
-		console.log("here");
-		// if(post.type!="" && post.subject!="" && post.source!="" && post.sourceURL!="" && post.content!=""){
+	this.addpost = function (post) {
 
-		// 	this.newPost.type = post.type;
-		// 	this.newPost.subject = post.subject;
-		// 	this.newPost.source = post.source;
-		// 	this.newPost.sourceURL = post.sourceURL;
-		// 	this.newPost.content = post.content;
-		// 	this.newPost.time = getTime();
+		if(post.type!="" && post.subject!="" && post.source!="" && post.sourceURL!="" && post.content!=""){
 
-		// 	console.log("post successful");
+			this.newPost.type = post.type;
+			this.newPost.subject = post.subject;
+			this.newPost.source = post.source;
+			this.newPost.sourceURL = post.sourceURL;
+			this.newPost.content = post.content;
+			this.newPost.time = getTime();
 
-		// 	ref.child('post').child("time").child(time).child(order).set(this.newPost);
-		// 	ref.child('post').child('all').child(order).set(this.newPost);
-		// 	this.newPost = {};
-		// 	order = order*1 + 1;
-		// 	ref.child('post').child(time).child('order').set(order);
+			console.log("post successful");
 
-		// 	alert("新增成功");
-		// 	window.location = 'http://localhost/web/adminList.php';
-		// }
+			ref.child('post').child("time").child(time).child(order).set(this.newPost);
+			ref.child('post').child('all').child(order).set(this.newPost);
+			this.newPost = {};
+			order = order*1 + 1;
+			ref.child('post').child(time).child('order').set(order);
+
+			alert("新增成功");
+			// window.location = 'http://localhost/web/adminList.php';
+		}
 	}
 	// ----------------------------------------------------------------------
 	// 公告管理-取得公告

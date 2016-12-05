@@ -106,7 +106,7 @@
                                       <p class="showSource">{{detail.source}}</p>
 
                                       <!-- 內容 -->
-                                      <p class="showContent">{{detail.content}}</p>
+                                      <p class="showContent" ng-bind-html="detail.content|trustHtml"></p>
 
                                       <label for="postTitle">來源連結</label>
                                       <a href="{{detail.sourceURL}}">{{detail.sourceURL}}</a>
@@ -143,8 +143,8 @@
                         <!-- postBox -->
                         <div class="postBox">
                             <a class="clickable" href="" data-toggle="modal" data-target="#Show{{detail.$id}}"><p class="viewTitle" ><span class="badge">100</span>{{detail.subject}}</p></a>
-                            <p class="viewSource">{{detail.source}}</p>
-                            <p class="viewContent">{{detail.content| cut:true:108:'...'}}</p>
+                            <p class="viewSource" ng-bind="detail.source"></p>
+                            <p class="viewContent" ng-bind-html="detail.content| cut:true:108:'...'|trustHtml"></p>
                         </div>
                         <!-- modal for Show -->
                         <div class="modal fade" id="Show{{detail.$id}}" tabindex="-1" role="dialog">
@@ -164,7 +164,7 @@
                                       <p class="showSource">{{detail.source}}</p>
 
                                       <!-- 內容 -->
-                                      <p class="showContent">{{detail.content}}</p>
+                                      <p class="showContent" ng-bind-html="detail.content|trustHtml"></p>
 
                                       <label for="postTitle">來源連結</label>
                                       <a href="{{detail.sourceURL}}" target="_blank" class="show">{{detail.sourceURL}}</a>
@@ -201,8 +201,8 @@
                         <!-- postBox -->
                         <div class="postBox">
                             <a class="clickable" href="" data-toggle="modal" data-target="#Show{{detail.$id}}"><p class="viewTitle" ><span class="badge">100</span>{{detail.subject}}</p></a>
-                            <p class="viewSource">{{detail.source}}</p>
-                            <p class="viewContent">{{detail.content| cut:true:108:'...'}}</p>
+                            <p class="viewSource" ng-bind="detail.source"></p>
+                            <p class="viewContent" ng-bind-html="detail.content| cut:true:108:'...'|trustHtml"></p>
                         </div>
                         <!-- modal for Show -->
                         <div class="modal fade" id="Show{{detail.$id}}" tabindex="-1" role="dialog">
@@ -222,7 +222,7 @@
                                       <p class="showSource">{{detail.source}}</p>
 
                                       <!-- 內容 -->
-                                      <p class="showContent">{{detail.content}}</p>
+                                      <p class="showContent" ng-bind-html="detail.content|trustHtml"></p>
 
                                       <label for="postTitle">來源連結</label>
                                       <a href="{{detail.sourceURL}}" target="_blank" class="show">{{detail.sourceURL}}</a>
@@ -259,8 +259,8 @@
                         <!-- postBox -->
                         <div class="postBox">
                             <a class="clickable" href="" data-toggle="modal" data-target="#Show{{detail.$id}}"><p class="viewTitle" ><span class="badge">100</span>{{detail.subject}}</p></a>
-                            <p class="viewSource">{{detail.source}}</p>
-                            <p class="viewContent">{{detail.content| cut:true:108:'...'}}</p>
+                            <p class="viewSource" ng-bind="detail.source"></p>
+                            <p class="viewContent" ng-bind-html="detail.content| cut:true:108:'...'|trustHtml"></p>
                         </div>
                         <!-- modal for Show -->
                         <div class="modal fade" id="Show{{detail.$id}}" tabindex="-1" role="dialog">
@@ -280,7 +280,7 @@
                                       <p class="showSource">{{detail.source}}</p>
 
                                       <!-- 內容 -->
-                                      <p class="showContent">{{detail.content}}</p>
+                                      <p class="showContent" ng-bind-html="detail.content|trustHtml"></p>
 
                                       <label for="postTitle">來源連結</label>
                                       <a href="{{detail.sourceURL}}" target="_blank" class="show">{{detail.sourceURL}}</a>
@@ -317,8 +317,8 @@
                         <!-- postBox -->
                         <div class="postBox">
                             <a class="clickable" href="" data-toggle="modal" data-target="#Show{{detail.$id}}"><p class="viewTitle" ><span class="badge">100</span>{{detail.subject}}</p></a>
-                            <p class="viewSource">{{detail.source}}</p>
-                            <p class="viewContent">{{detail.content| cut:true:108:'...'}}</p>
+                            <p class="viewSource" ng-bind="detail.source"></p>
+                            <p class="viewContent" ng-bind-html="detail.content| cut:true:108:'...'|trustHtml"></p>
                         </div>
                         <!-- modal for Show -->
                         <div class="modal fade" id="Show{{detail.$id}}" tabindex="-1" role="dialog">
@@ -338,7 +338,7 @@
                                       <p class="showSource">{{detail.source}}</p>
 
                                       <!-- 內容 -->
-                                      <p class="showContent">{{detail.content}}</p>
+                                      <p class="showContent" ng-bind-html="detail.content|trustHtml"></p>
 
                                       <label for="postTitle">來源連結</label>
                                       <a href="{{detail.sourceURL}}" target="_blank" class="show">{{detail.sourceURL}}</a>

@@ -8,6 +8,9 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/bootstrap-theme.css" />
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+
+	<!-- ckeditor -->
+	<script type ="text/javascript" src="ckeditor/ckeditor.js"></script>
 	<!-- 引入firebase -->
 	<script type ="text/javascript" src="js/firebase.js"></script>
 	<!-- 引入Angular JS -->
@@ -32,7 +35,17 @@
 				header("Location: login.php");
 			}
 	?>
-
+	<script type="text/javascript">
+		$.fn.modal.Constructor.prototype.enforceFocus = function() {
+		 	modal_this = this
+		 	$(document).on('focusin.modal', function (e) {
+		 		if (modal_this.$element[0] !== e.target && !modal_this.$element.has(e.target).length
+		 		&& !$(e.target.parentNode).hasClass('cke_dialog_ui_input_select')
+		 		&& !$(e.target.parentNode).hasClass('cke_dialog_ui_input_text')) {
+		 		modal_this.$element.focus() } 
+		 	}) 
+		 };
+	</script>
 </head>
 <body class="adminPage">
 
@@ -128,8 +141,7 @@
 							            <p class="show">{{detail.source}}</p>
 
 							            <label for="postContent">內容</label>
-							            <!-- <p class="showContent">{{detail.content}}</p> -->
-							            <div>{{detail.content}} </div>
+							            <p class="showContent" ng-bind-html="detail.content|trustHtml"></p>
 
 
 							            <label for="postTitle">來源連結</label>
@@ -176,7 +188,7 @@
 								        </div>
 								        <div class="form-group col-md-12">
 								            <label for="postContent">內容</label>
-								            <textarea class="form-control" name="postContent" id="postContent" rows="15" ng-model="detail.content"></textarea>
+								            <textarea  ckeditor class="form-control" name="postContent" id="postContent" rows="15" ng-model="detail.content"></textarea>
 								        </div>
 							      	</div>
 							      	<div class="modal-footer">

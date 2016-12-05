@@ -35,19 +35,19 @@
 				header("Location: login.php");
 			}
 		// 錯誤資訊--------------------------------------------
-			if(isset($_POST["postTitle"])){
-				$Title = $_POST["postTitle"];
-				$Type = $_POST["postType"];
-				$Source = $_POST["postSource"];
-				$SourceURL = $_POST["postSourceURL"];
-				$Content = $_POST["postContent"];
+			// if(isset($_POST["postTitle"])){
+			// 	$Title = $_POST["postTitle"];
+			// 	$Type = $_POST["postType"];
+			// 	$Source = $_POST["postSource"];
+			// 	$SourceURL = $_POST["postSourceURL"];
+			// 	$Content = $_POST["postContent"];
 
-				if($Title==""||$Type==""||$Source==""||$sourceURL==""||$Content==""){
-					$_SESSION['FormError'] = "true";
-				}
-			}
+			// 	if($Title==""||$Type==""||$Source==""||$sourceURL==""||$Content==""){
+			// 		$_SESSION['FormError'] = "true";
+			// 	}
+			// }
 	?>
-		 </script>
+
 </head>
 <body class="adminPage">
 
@@ -118,10 +118,8 @@
 	        </div>
 	        <div class="form-group col-md-12">
 	            <label for="postContent">內容</label>
-	            <textarea class="form-control" name="postContent" id="postContent" rows="15"></textarea>
-	            <script>
-					var editor = CKEDITOR.replace( 'postContent', {height:450});
-				</script>
+	            <textarea ckeditor class="form-control" name="postContent" id="postContent" rows="15" ng-model="postTemp.content"></textarea>
+
 	        </div>
 
 	        <!-- 提示訊息 -->
@@ -129,7 +127,6 @@
             	<div class="alert alert-info">
 	                <ul>
 	                    <li>所有欄位都皆須輸入</li>
-	                    <button onclick="console.log(editor.document.getBody().getHtml())">test</button>
                 	</ul>
             	</div>
         	</div>
@@ -138,7 +135,7 @@
 	         <div class="form-group text-center">
 	            <a href="admin.php"><button type="button" class="btn btn-default">返回</button></a>
 	            <button type="reset" class="btn btn-warning" ng-click="postTemp={}">重設</button>
-	            <button type="submit" class="btn btn-primary" ng-click="dataC.addpost(editor.document.getBody().getHtml(),postTemp); postTemp={}; ">新增</button>
+	            <button type="submit" class="btn btn-primary" ng-click="dataC.addpost(postTemp); postTemp={}; ">新增</button>
         	</div>
 
 	    </form>
