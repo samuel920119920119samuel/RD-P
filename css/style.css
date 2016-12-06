@@ -346,12 +346,28 @@ footer
     margin-top: 0.5em;
 }
 
+.indexPage .sourceURL{
+    border-left: 8px solid #53b7bb;
+}
+
 .indexPage .tools{
     margin-top: 1em;
+/*    position: fixed;
+    right:5%;*/
 }
 
 .indexPage .searchArea{
     margin-top: 0.5em;
+}
+
+.indexPage .link{
+    margin:2em 0 0 0;
+    background-color:  #0072E3;
+    border-radius:10px 10px 0 0;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #FFFFFF;
 }
 
 .indexPage #myModalLabel{
@@ -413,6 +429,5 @@ footer
 /*Source in modal*/
 .indexPage .modal-body .showContent{
     font-family: '微軟正黑體', Helvetica, sans-serif;
-    font-size: 18px;
-    letter-spacing:1px;
+    font-size: 16px;
 }

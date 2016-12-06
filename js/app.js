@@ -233,11 +233,14 @@ app.controller("dataController",function($firebaseArray,$scope){
 		console.log("into")
 		console.log(this.show)
 		this.show2 = localClick(this.show, item);
+		console.log(this.show2)
 	}
 
 	localClick = function(data,item){
+		console.log("into2")
 		console.log(data)
 		console.log(data.length)
+
 		output = [];
 		if(item=="高教資訊"){
 			for (var i = 0; i < data.length; i++) {
