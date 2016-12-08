@@ -251,7 +251,8 @@ app.controller("dataController",function($firebaseArray,$scope){
 						source : data[i].source,
 						sourceURL : data[i].sourceURL,
 						content : data[i].content,
-						time : data[i].time
+						time : data[i].time,
+						id : data[i].$id
 					};
 				}
 			};
@@ -267,7 +268,8 @@ app.controller("dataController",function($firebaseArray,$scope){
 						source : data[i].source,
 						sourceURL : data[i].sourceURL,
 						content : data[i].content,
-						time : data[i].time
+						time : data[i].time,
+						id : data[i].$id
 					};
 				}
 			};
@@ -283,7 +285,8 @@ app.controller("dataController",function($firebaseArray,$scope){
 						source : data[i].source,
 						sourceURL : data[i].sourceURL,
 						content : data[i].content,
-						time : data[i].time
+						time : data[i].time,
+						id : data[i].$id
 					};
 				}
 			};
@@ -299,7 +302,8 @@ app.controller("dataController",function($firebaseArray,$scope){
 						source : data[i].source,
 						sourceURL : data[i].sourceURL,
 						content : data[i].content,
-						time : data[i].time
+						time : data[i].time,
+						id : data[i].$id
 					};
 				}
 			};

@@ -83,13 +83,13 @@
                 <div class="col-md-8">
                     <section ng-repeat="detail in dataC.show | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
-                        <div class="postBox" data-toggle="modal" data-target="#Show{{detail.$id}}">
+                        <div class="postBox" data-toggle="modal" data-target="#ShowAll{{detail.$id}}">
                             <p class="viewTitle" ><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>&nbsp;&nbsp;{{detail.subject}}</p>
                             <p class="viewSource" ng-bind="detail.source"></p>
                             <p class="viewContent" ng-bind-html="detail.content| cut:true:108:'...'|trustHtml"></p>
                         </div>
                         <!-- modal for Show -->
-                        <div class="modal fade" id="Show{{detail.$id}}" tabindex="-1" role="dialog">
+                        <div class="modal fade" id="ShowAll{{detail.$id}}" tabindex="-1" role="dialog">
                           <div class="modal-dialog modal-lg">
                               <div class="modal-content">
 
@@ -152,13 +152,13 @@
                 <div class="col-md-8">
                     <section ng-repeat="detail in dataC.show2 | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
-                        <div class="postBox" data-toggle="modal" data-target="#Show{{detail.$id}}">
+                        <div class="postBox" data-toggle="modal" data-target="#Show{{detail.id}}" ng-click="{{console.log(detail)}}" >
                             <p class="viewTitle" ><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>&nbsp;&nbsp;{{detail.subject}}</p>
                             <p class="viewSource" ng-bind="detail.source"></p>
                             <p class="viewContent" ng-bind-html="detail.content| cut:true:108:'...'|trustHtml"></p>
                         </div>
                         <!-- modal for Show -->
-                        <div class="modal fade" id="Show{{detail.$id}}" tabindex="-1" role="dialog">
+                        <div class="modal fade" id="Show{{detail.id}}" tabindex="-1" role="dialog">
                           <div class="modal-dialog modal-lg">
                               <div class="modal-content">
                                   <div class="modal-body" id="ShowModal" >
@@ -218,13 +218,13 @@
                 <div class="col-md-8">
                     <section ng-repeat="detail in dataC.show2 | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
-                        <div class="postBox" data-toggle="modal" data-target="#Show{{detail.$id}}">
+                        <div class="postBox" data-toggle="modal" data-target="#Show2{{detail.id}}" ng-click="console.log(detail)">
                             <p class="viewTitle" ><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>&nbsp;&nbsp;{{detail.subject}}</p>
                             <p class="viewSource" ng-bind="detail.source"></p>
                             <p class="viewContent" ng-bind-html="detail.content| cut:true:108:'...'|trustHtml"></p>
                         </div>
                         <!-- modal for Show -->
-                        <div class="modal fade" id="Show{{detail.$id}}" tabindex="-1" role="dialog">
+                        <div class="modal fade" id="Show2{{detail.id}}" tabindex="-1" role="dialog">
                           <div class="modal-dialog modal-lg">
                               <div class="modal-content">
                                   <div class="modal-body" id="ShowModal" >
@@ -284,13 +284,13 @@
                 <div class="col-md-8">
                     <section ng-repeat="detail in dataC.show2 | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
-                        <div class="postBox" data-toggle="modal" data-target="#Show{{detail.$id}}">
+                        <div class="postBox" data-toggle="modal" data-target="#Show3{{detail.id}}">
                             <p class="viewTitle" ><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>&nbsp;&nbsp;{{detail.subject}}</p>
                             <p class="viewSource" ng-bind="detail.source"></p>
                             <p class="viewContent" ng-bind-html="detail.content| cut:true:108:'...'|trustHtml"></p>
                         </div>
                         <!-- modal for Show -->
-                        <div class="modal fade" id="Show{{detail.$id}}" tabindex="-1" role="dialog">
+                        <div class="modal fade" id="Show3{{detail.id}}" tabindex="-1" role="dialog">
                           <div class="modal-dialog modal-lg">
                               <div class="modal-content">
                                   <div class="modal-body" id="ShowModal" >
@@ -346,17 +346,17 @@
             </div>
 
             <!-- 焦點評論 -->
-           <div role="tabpanel" class="tab-pane fade" id="education" ng-init="dataC.showData2();dataC.order=true;">
+           <div role="tabpanel" class="tab-pane fade" id="highlight" ng-init="dataC.showData2();dataC.order=true;">
                 <div class="col-md-8">
                     <section ng-repeat="detail in dataC.show2 | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
-                        <div class="postBox" data-toggle="modal" data-target="#Show{{detail.$id}}">
+                        <div class="postBox" data-toggle="modal" data-target="#Show4{{detail.id}}">
                             <p class="viewTitle" ><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>&nbsp;&nbsp;{{detail.subject}}</p>
                             <p class="viewSource" ng-bind="detail.source"></p>
                             <p class="viewContent" ng-bind-html="detail.content| cut:true:108:'...'|trustHtml"></p>
                         </div>
                         <!-- modal for Show -->
-                        <div class="modal fade" id="Show{{detail.$id}}" tabindex="-1" role="dialog">
+                        <div class="modal fade" id="Show4{{detail.id}}" tabindex="-1" role="dialog">
                           <div class="modal-dialog modal-lg">
                               <div class="modal-content">
                                   <div class="modal-body" id="ShowModal" >
