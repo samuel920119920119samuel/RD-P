@@ -32,7 +32,7 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="http://www.ncu.edu.tw/~ncu7020/index.php">國立中央大學研發處</a>
+            <p class="navbar-brand">國立中央大學研發處</br>高教潛力議題觀測站</p>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                     <span class="sr-only">Toggle Navigation</span>
                     <span class="icon-bar"></span>
@@ -41,7 +41,7 @@
                 </button>
           </div>
           <ul class="nav navbar-nav collapse navbar-collapse" id="app-navbar-collapse">
-              <li><a href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/">關於研發處</a></li>
+              <li><a href="http://www.ncu.edu.tw/~ncu7020/">研發處</a></li>
               <li class="dropdown active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">企劃組 <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                       <li><a href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/business.php#1">本組簡介</a></li>
@@ -135,7 +135,7 @@
 
 
                     <div class="btn-group-vertical col-md-offset-3 col-md-6 col-md-offset-3">
-                      <p class="link">相關連結</p>
+                      <p class="link">研發處企劃組</p>
                       <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/business.php#1">本組簡介</button>
                       <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/member.php#2">成員及職掌</button>
                       <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/Files/%E4%BC%81%E5%8A%83%E7%B5%84FAQ(103%E5%B9%B4%E7%89%88).docx">校務發展計畫</button>
@@ -201,7 +201,7 @@
                           <input type="text" class="form-control col-md-4" placeholder="搜尋標題" ng-model="search.subject">
                     </div>
                     <div class="btn-group-vertical col-md-offset-3 col-md-6 col-md-offset-3">
-                        <p class="link">相關連結</p>
+                        <p class="link">研發處企劃組</p>
                         <button class="btn btn-default btn-sm" >本組簡介</button>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/member.php#2">成員及職掌</button>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/Files/%E4%BC%81%E5%8A%83%E7%B5%84FAQ(103%E5%B9%B4%E7%89%88).docx">校務發展計畫</button>
@@ -267,7 +267,7 @@
                           <input type="text" class="form-control col-md-4" placeholder="搜尋標題" ng-model="search.subject">
                     </div>
                     <div class="btn-group-vertical col-md-offset-3 col-md-6 col-md-offset-3">
-                        <p class="link">相關連結</p>
+                        <p class="link">研發處企劃組</p>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/business.php#1">本組簡介</button>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/member.php#2">成員及職掌</button>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/Files/%E4%BC%81%E5%8A%83%E7%B5%84FAQ(103%E5%B9%B4%E7%89%88).docx">校務發展計畫</button>
@@ -333,7 +333,7 @@
                           <input type="text" class="form-control col-md-4" placeholder="搜尋標題" ng-model="search.subject">
                     </div>
                     <div class="btn-group-vertical col-md-offset-3 col-md-6 col-md-offset-3">
-                        <p class="link">相關連結</p>
+                        <p class="link">研發處企劃組</p>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/business.php#1">本組簡介</button>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/member.php#2">成員及職掌</button>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/Files/%E4%BC%81%E5%8A%83%E7%B5%84FAQ(103%E5%B9%B4%E7%89%88).docx">校務發展計畫</button>
@@ -399,7 +399,7 @@
                           <input type="text" class="form-control col-md-4" placeholder="搜尋標題" ng-model="search.subject">
                     </div>
                     <div class="btn-group-vertical col-md-offset-3 col-md-6 col-md-offset-3">
-                        <p class="link">相關連結</p>
+                        <p class="link">研發處企劃組</p>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/business.php#1">本組簡介</button>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/member.php#2">成員及職掌</button>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/Files/%E4%BC%81%E5%8A%83%E7%B5%84FAQ(103%E5%B9%B4%E7%89%88).docx">校務發展計畫</button>

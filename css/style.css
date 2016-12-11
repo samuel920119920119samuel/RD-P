@@ -282,13 +282,13 @@ footer
 /*********************************************************************************/
 
 .indexPage .nav{
-    font-family: 'Noto Sans TC', sans-serif;
+    /*font-family: 'Noto Sans TC', sans-serif;*/
     font-weight: 550;
     font-size: 18px;
 }
 
-.indexPage .nav a:hover{
-    color:;
+.indexPage .navbar-brand{
+    color: white;
 }
 
 .indexPage .postBox{
