@@ -32,7 +32,7 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
-            <p class="navbar-brand">國立中央大學研發處</br>高教潛力議題觀測站</p>
+            <a class="navbar-brand" href="http://www.ncu.edu.tw/~ncu7020/index.php">國立中央大學研發處</a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                     <span class="sr-only">Toggle Navigation</span>
                     <span class="icon-bar"></span>
@@ -41,7 +41,7 @@
                 </button>
           </div>
           <ul class="nav navbar-nav collapse navbar-collapse" id="app-navbar-collapse">
-              <li><a href="http://www.ncu.edu.tw/~ncu7020/">研發處</a></li>
+              <li><a href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/">關於研發處</a></li>
               <li class="dropdown active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">企劃組 <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                       <li><a href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/business.php#1">本組簡介</a></li>
@@ -79,9 +79,9 @@
         <div class="tab-content">
 
             <!-- 所有公告 -->
-            <div role="tabpanel" class="tab-pane fade in active" id="all" ng-init="dataC.showData2();dataC.order=true;">
+            <div role="tabpanel" class="tab-pane fade in active" id="all" ng-init="dataC.showData2();">
                 <div class="col-md-8">
-                    <section ng-repeat="detail in dataC.show | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
+                    <section ng-repeat="detail in dataC.show | orderBy: '-time' | filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
                         <div class="postBox" data-toggle="modal" data-target="#ShowAll{{detail.$id}}">
                             <p class="viewTitle" ><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>&nbsp;&nbsp;{{detail.subject}}</p>
@@ -119,15 +119,10 @@
                         </div>                        
                     </section>
                     <div class="pagination pagination-centered">
-                        <button class="show-more-btn" ng-show="dataC.hasMoreItemsToShow2()" ng-click="dataC.showMoreItems2()">Show more</button>
+                        <button class="show-more-btn" ng-show="dataC.hasMoreItemsToShow2('all')" ng-click="dataC.showMoreItems2()">Show more</button>
                     </div>
                 </div>
                 <div class="col-md-4 tools">
-                    <!-- 時間排序 -->
-                    <div class="text-center">
-                        <button class="btn btn-primary btn-order" ng-click="dataC.order=true">由新到舊</button>
-                        <button class="btn btn-primary btn-order" ng-click="dataC.order=false">由舊到新</button>
-                    </div>
                     <!-- 搜尋 -->
                     <div class="searchArea col-md-offset-2 col-md-8 col-md-offset-2">
                           <input type="text" class="form-control col-md-4" placeholder="搜尋標題" ng-model="search.subject">
@@ -135,7 +130,7 @@
 
 
                     <div class="btn-group-vertical col-md-offset-3 col-md-6 col-md-offset-3">
-                      <p class="link">研發處企劃組</p>
+                      <p class="link">相關連結</p>
                       <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/business.php#1">本組簡介</button>
                       <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/member.php#2">成員及職掌</button>
                       <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/Files/%E4%BC%81%E5%8A%83%E7%B5%84FAQ(103%E5%B9%B4%E7%89%88).docx">校務發展計畫</button>
@@ -148,9 +143,9 @@
             </div>
 
             <!-- 高教資訊 -->
-            <div role="tabpanel" class="tab-pane fade" id="education" ng-init="dataC.showData2();dataC.order=true;">
+            <div role="tabpanel" class="tab-pane fade" id="education" ng-init="dataC.showData2();">
                 <div class="col-md-8">
-                    <section ng-repeat="detail in dataC.show2 | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
+                    <section ng-repeat="detail in dataC.show2 | orderBy:'-time' | filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
                         <div class="postBox" data-toggle="modal" data-target="#Show{{detail.id}}" ng-click="{{console.log(detail)}}" >
                             <p class="viewTitle" ><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>&nbsp;&nbsp;{{detail.subject}}</p>
@@ -191,17 +186,12 @@
                     </div>
                 </div>
                 <div class="col-md-4 tools">
-                    <!-- 時間排序 -->
-                    <div class="text-center">
-                        <button class="btn btn-primary btn-order" ng-click="dataC.order=true">由新到舊</button>
-                        <button class="btn btn-primary btn-order" ng-click="dataC.order=false">由舊到新</button>
-                    </div>
                     <!-- 搜尋 -->
                     <div class="searchArea col-md-offset-2 col-md-8 ">
                           <input type="text" class="form-control col-md-4" placeholder="搜尋標題" ng-model="search.subject">
                     </div>
                     <div class="btn-group-vertical col-md-offset-3 col-md-6 col-md-offset-3">
-                        <p class="link">研發處企劃組</p>
+                        <p class="link">相關連結</p>
                         <button class="btn btn-default btn-sm" >本組簡介</button>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/member.php#2">成員及職掌</button>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/Files/%E4%BC%81%E5%8A%83%E7%B5%84FAQ(103%E5%B9%B4%E7%89%88).docx">校務發展計畫</button>
@@ -214,9 +204,9 @@
             </div>
 
             <!-- 科技政策 -->
-           <div role="tabpanel" class="tab-pane fade" id="technology" ng-init="dataC.showData2();dataC.order=true;">
+           <div role="tabpanel" class="tab-pane fade" id="technology" ng-init="dataC.showData2();">
                 <div class="col-md-8">
-                    <section ng-repeat="detail in dataC.show2 | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
+                    <section ng-repeat="detail in dataC.show2 | orderBy: '-time'| filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
                         <div class="postBox" data-toggle="modal" data-target="#Show2{{detail.id}}" ng-click="console.log(detail)">
                             <p class="viewTitle" ><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>&nbsp;&nbsp;{{detail.subject}}</p>
@@ -257,17 +247,12 @@
                     </div>
                 </div>
                 <div class="col-md-4 tools">
-                    <!-- 時間排序 -->
-                    <div class="text-center">
-                        <button class="btn btn-primary btn-order" ng-click="dataC.order=true">由新到舊</button>
-                        <button class="btn btn-primary btn-order" ng-click="dataC.order=false">由舊到新</button>
-                    </div>
                     <!-- 搜尋 -->
                     <div class="searchArea col-md-offset-2 col-md-8 ">
                           <input type="text" class="form-control col-md-4" placeholder="搜尋標題" ng-model="search.subject">
                     </div>
                     <div class="btn-group-vertical col-md-offset-3 col-md-6 col-md-offset-3">
-                        <p class="link">研發處企劃組</p>
+                        <p class="link">相關連結</p>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/business.php#1">本組簡介</button>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/member.php#2">成員及職掌</button>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/Files/%E4%BC%81%E5%8A%83%E7%B5%84FAQ(103%E5%B9%B4%E7%89%88).docx">校務發展計畫</button>
@@ -280,9 +265,9 @@
             </div>
 
             <!-- 大學櫥窗 -->
-           <div role="tabpanel" class="tab-pane fade" id="college" ng-init="dataC.showData2();dataC.order=true;">
+           <div role="tabpanel" class="tab-pane fade" id="college" ng-init="dataC.showData2();">
                 <div class="col-md-8">
-                    <section ng-repeat="detail in dataC.show2 | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
+                    <section ng-repeat="detail in dataC.show2 | orderBy: '-time' | filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
                         <div class="postBox" data-toggle="modal" data-target="#Show3{{detail.id}}">
                             <p class="viewTitle" ><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>&nbsp;&nbsp;{{detail.subject}}</p>
@@ -323,17 +308,12 @@
                     </div>
                 </div>
                 <div class="col-md-4 tools">
-                    <!-- 時間排序 -->
-                    <div class="text-center">
-                        <button class="btn btn-primary btn-order" ng-click="dataC.order=true">由新到舊</button>
-                        <button class="btn btn-primary btn-order" ng-click="dataC.order=false">由舊到新</button>
-                    </div>
                     <!-- 搜尋 -->
                     <div class="searchArea col-md-offset-2 col-md-8 ">
                           <input type="text" class="form-control col-md-4" placeholder="搜尋標題" ng-model="search.subject">
                     </div>
                     <div class="btn-group-vertical col-md-offset-3 col-md-6 col-md-offset-3">
-                        <p class="link">研發處企劃組</p>
+                        <p class="link">相關連結</p>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/business.php#1">本組簡介</button>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/member.php#2">成員及職掌</button>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/Files/%E4%BC%81%E5%8A%83%E7%B5%84FAQ(103%E5%B9%B4%E7%89%88).docx">校務發展計畫</button>
@@ -346,9 +326,9 @@
             </div>
 
             <!-- 焦點評論 -->
-           <div role="tabpanel" class="tab-pane fade" id="highlight" ng-init="dataC.showData2();dataC.order=true;">
+           <div role="tabpanel" class="tab-pane fade" id="highlight" ng-init="dataC.showData2();">
                 <div class="col-md-8">
-                    <section ng-repeat="detail in dataC.show2 | orderBy: dataC.orderGet() | filter:search:strict | limitTo: dataC.paginationLimit2()">
+                    <section ng-repeat="detail in dataC.show2 | orderBy: '-time' | filter:search:strict | limitTo: dataC.paginationLimit2()">
                         <!-- postBox -->
                         <div class="postBox" data-toggle="modal" data-target="#Show4{{detail.id}}">
                             <p class="viewTitle" ><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>&nbsp;&nbsp;{{detail.subject}}</p>
@@ -389,17 +369,12 @@
                     </div>
                 </div>
                 <div class="col-md-4 tools">
-                    <!-- 時間排序 -->
-                    <div class="text-center">
-                        <button class="btn btn-primary btn-order" ng-click="dataC.order=true">由新到舊</button>
-                        <button class="btn btn-primary btn-order" ng-click="dataC.order=false">由舊到新</button>
-                    </div>
                     <!-- 搜尋 -->
                     <div class="searchArea col-md-offset-2 col-md-8 ">
                           <input type="text" class="form-control col-md-4" placeholder="搜尋標題" ng-model="search.subject">
                     </div>
                     <div class="btn-group-vertical col-md-offset-3 col-md-6 col-md-offset-3">
-                        <p class="link">研發處企劃組</p>
+                        <p class="link">相關連結</p>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/business.php#1">本組簡介</button>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/AboutRDO/member.php#2">成員及職掌</button>
                         <button class="btn btn-default btn-sm" href="http://www.ncu.edu.tw/~ncu7020/Files/%E4%BC%81%E5%8A%83%E7%B5%84FAQ(103%E5%B9%B4%E7%89%88).docx">校務發展計畫</button>

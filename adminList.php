@@ -11,6 +11,10 @@
 
 	<!-- ckeditor -->
 	<script type ="text/javascript" src="ckeditor/ckeditor.js"></script>
+	<!-- 分頁排版 -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.simplePagination.js"></script>
+	<link rel="stylesheet" href="css/simplePagination.css" />
 	<!-- 引入firebase -->
 	<script type ="text/javascript" src="js/firebase.js"></script>
 	<!-- 引入Angular JS -->
@@ -21,6 +25,7 @@
 	<noscript>
 		<!-- style -->
 		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/simplePagination.css" />
 	</noscript>
 	
 	<?php 
@@ -106,108 +111,116 @@
 	        </thead>
 	        <!-- body -->
 	        <tbody>
-	            <tr ng-repeat="detail in dataC.show| orderBy: dataC.orderGet() |limitTo: dataC.paginationLimit() : dataC.getStart() | filter:search:strict">
-	            	<!-- 分類 -->
-	                <td  class="text-center" ng-bind="detail.type">
-	                </td>
-	            	<!-- 公告標題 -->
-	                <td ng-bind="detail.subject">
-	                </td >
-	            	<!-- 公告時間 -->
-	                <td class="text-center" ng-bind="detail.time">
-	                </td>
-	                <!--  工具: 瀏覽 編輯 刪除 -->
-	                <td>
-						<a href="" data-toggle="modal" data-target="#View{{detail.$id}}" ng-cilck="dataC.test()"><span class="glyphicon glyphicon-eye-open"></span></a>
-	                    <a href="" data-toggle="modal" data-target="#Edit{{detail.$id}}"><span class="glyphicon glyphicon-pencil"></span></a>
-	                    <a href="" ng-click="dataC.deletePost(detail)"><span class="glyphicon glyphicon-trash"></span></a>
+	        	
+		            <tr ng-repeat="detail in dataC.show | orderBy: dataC.orderGet() | limitTo: dataC.pageSize : (dataC.currentPage)*(dataC.pageSize) | filter:search:strict">
+		            	<!-- 分類 -->
+		                <td  class="text-center" ng-bind="detail.type">
+		                </td>
+		            	<!-- 公告標題 -->
+		                <td ng-bind="detail.subject">
+		                </td >
+		            	<!-- 公告時間 -->
+		                <td class="text-center" ng-bind="detail.time">
+		                </td>
+		                <!--  工具: 瀏覽 編輯 刪除 -->
+		                <td>
+							<a href="" data-toggle="modal" data-target="#View{{detail.$id}}" ng-cilck="dataC.test()"><span class="glyphicon glyphicon-eye-open"></span></a>
+		                    <a href="" data-toggle="modal" data-target="#Edit{{detail.$id}}"><span class="glyphicon glyphicon-pencil"></span></a>
+		                    <a href="" ng-click="dataC.deletePost(detail)"><span class="glyphicon glyphicon-trash"></span></a>
 
-                    	<!-- modal for 瀏覽 -->
-						<div class="modal fade" id="View{{detail.$id}}" tabindex="-1" role="dialog">
-							<div class="modal-dialog modal-lg">
-							    <div class="modal-content">
-							        <div class="modal-header">
-							            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-							            <h1 class="modal-title text-center" id="myModalLabel">瀏覽公告</h1>
-							        </div>
-							        <div class="modal-body" id="viewModal" >
+	                    	<!-- modal for 瀏覽 -->
+							<div class="modal fade" id="View{{detail.$id}}" tabindex="-1" role="dialog">
+								<div class="modal-dialog modal-lg">
+								    <div class="modal-content">
+								        <div class="modal-header">
+								            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+								            <h1 class="modal-title text-center" id="myModalLabel">瀏覽公告</h1>
+								        </div>
+								        <div class="modal-body" id="viewModal" >
 
-							            <label for="postTitle">標題</label>
-							            <p class="show">{{detail.subject}}</p>
-
-							            <label for="postType">公告分類</label>
-							            <p class="show">{{detail.type}}</p>
-
-							            <label for="postTitle">來源</label>
-							            <p class="show">{{detail.source}}</p>
-
-							            <label for="postContent">內容</label>
-							            <p class="showContent" ng-bind-html="detail.content|trustHtml"></p>
-
-
-							            <label for="postTitle">來源連結</label>
-							           	<a href="{{detail.sourceURL}}" target="_blank" class="show">{{detail.sourceURL}}</a>
-
-							      	</div>
-							      	<div class="modal-footer">
-							            <button type="submit" class="btn btn-primary" data-dismiss="modal">返回</button>
-							      	</div>
-							    </div>
-						    </div>
-						</div>
-
-                    	<!-- modal for 編輯 -->
-						<div class="modal fade" id="Edit{{detail.$id}}" tabindex="-1" role="dialog" >
-							<div class="modal-dialog modal-lg">
-							    <div class="modal-content">
-							        <div class="modal-header">
-							            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-							            <h1 class="modal-title text-center" id="myModalLabel">編輯公告</h1>
-							        </div>
-							        <div class="modal-body" id="editPostForm">
-							        	<!-- 表單 -->
-								        <div class="form-group col-md-8">
 								            <label for="postTitle">標題</label>
-								            <input type="text" class="form-control" id="postTitle" name="postTitle" placeholder="標題" ng-model="detail.subject">
-								        </div>
-								        <div class="form-group col-md-4">
+								            <p class="show">{{detail.subject}}</p>
+
 								            <label for="postType">公告分類</label>
-								            <select class="form-control" name="postType" ng-model="detail.type">
-								                <option>高教資訊</option>
-								                <option>科技政策</option>
-								                <option>大學櫥窗</option>
-								                <option>焦點評論</option>
-								            </select>
-								        </div>
-								        <div class="form-group col-md-8">
+								            <p class="show">{{detail.type}}</p>
+
 								            <label for="postTitle">來源</label>
-								            <input type="text" class="form-control" id="postSource" name="postSource" placeholder="來源" ng-model="detail.source">
-								        </div>
-								        <div class="form-group col-md-4">
-								            <label for="postTitle">來源連結</label>
-								            <input type="text" class="form-control" id="postSourceURL" name="postSourceURL" placeholder="來源連結" ng-model="detail.sourceURL">
-								        </div>
-								        <div class="form-group col-md-12">
+								            <p class="show">{{detail.source}}</p>
+
 								            <label for="postContent">內容</label>
-								            <textarea  ckeditor class="form-control" name="postContent" id="postContent" rows="15" ng-model="detail.content"></textarea>
-								        </div>
-							      	</div>
-							      	<div class="modal-footer">
-							            <button type="submit" class="btn btn-primary" ng-click="dataC.saveEdit(detail);" data-dismiss="modal">確認</button>
-							      	</div>
+								            <p class="showContent" ng-bind-html="detail.content|trustHtml"></p>
+
+
+								            <label for="postTitle">來源連結</label>
+								           	<a href="{{detail.sourceURL}}" target="_blank" class="show">{{detail.sourceURL}}</a>
+
+								      	</div>
+								      	<div class="modal-footer">
+								            <button type="submit" class="btn btn-primary" data-dismiss="modal">返回</button>
+								      	</div>
+								    </div>
 							    </div>
-						    </div>
-						</div>
-	                </td>
-	               
-	            </tr>
+							</div>
+
+	                    	<!-- modal for 編輯 -->
+							<div class="modal fade" id="Edit{{detail.$id}}" tabindex="-1" role="dialog" >
+								<div class="modal-dialog modal-lg">
+								    <div class="modal-content">
+								        <div class="modal-header">
+								            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+								            <h1 class="modal-title text-center" id="myModalLabel">編輯公告</h1>
+								        </div>
+								        <div class="modal-body" id="editPostForm">
+								        	<!-- 表單 -->
+									        <div class="form-group col-md-8">
+									            <label for="postTitle">標題</label>
+									            <input type="text" class="form-control" id="postTitle" name="postTitle" placeholder="標題" ng-model="detail.subject">
+									        </div>
+									        <div class="form-group col-md-4">
+									            <label for="postType">公告分類</label>
+									            <select class="form-control" name="postType" ng-model="detail.type">
+									                <option>高教資訊</option>
+									                <option>科技政策</option>
+									                <option>大學櫥窗</option>
+									                <option>焦點評論</option>
+									            </select>
+									        </div>
+									        <div class="form-group col-md-8">
+									            <label for="postTitle">來源</label>
+									            <input type="text" class="form-control" id="postSource" name="postSource" placeholder="來源" ng-model="detail.source">
+									        </div>
+									        <div class="form-group col-md-4">
+									            <label for="postTitle">來源連結</label>
+									            <input type="text" class="form-control" id="postSourceURL" name="postSourceURL" placeholder="來源連結" ng-model="detail.sourceURL">
+									        </div>
+									        <div class="form-group col-md-12">
+									            <label for="postContent">內容</label>
+									            <textarea  ckeditor class="form-control" name="postContent" id="postContent" rows="15" ng-model="detail.content"></textarea>
+									        </div>
+								      	</div>
+								      	<div class="modal-footer">
+								            <button type="submit" class="btn btn-primary" ng-click="dataC.saveEdit(detail);" data-dismiss="modal">確認</button>
+								      	</div>
+								    </div>
+							    </div>
+							</div>
+
+		                </td>
+		            </tr>
 	        </tbody>
 	    </table>
-	</div>
-		<div class="pagination pagination-centered">
-			<button class="show-more-btn" ng-show="dataC.hasMoreItemsToShow()" ng-click="dataC.showMoreItems()">MORE</button>
+
+	    <div style="text-align:center;margin-bottom:13px;">
+		 	<button ng-disabled="dataC.currentPage == 0" ng-click="dataC.currentPage=dataC.currentPage-1">
+		        <span aria-hidden="true">&laquo;</span>
+		    </button>
+		    {{dataC.currentPage+1}}/{{dataC.numberOfPages()}}
+		    <button ng-disabled="dataC.currentPage >= dataC.show.length/dataC.pageSize - 1" ng-click="dataC.currentPage = dataC.currentPage + 1">
+		        <span aria-hidden="true">&raquo;</span>
+		    </button>
 		</div>
-	
+	</div>
+
  		
 	<!-- bootstrap js -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

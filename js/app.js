@@ -56,7 +56,6 @@ app.directive('ckeditor', function() {
     };
 });
 
-
 app.controller("dataController",function($firebaseArray,$scope){
 
 	//制式化:參數填入資料庫url
@@ -117,6 +116,7 @@ app.controller("dataController",function($firebaseArray,$scope){
 
 	// // 建立當日順序
 	var order;
+	var All_order;
 	ref.once("value", function(snap) {
 		if ( snap.child('post').child(time).exists() == false ){
 			console.log("not exists");
@@ -126,7 +126,9 @@ app.controller("dataController",function($firebaseArray,$scope){
 	  		order = snap.child('post').child(time).val().order;
 	  		console.log(order);
 	  	}
+	  	All_order = snap.child('post').val().Allorder;
 	});
+
 
 	
 	// 新增
@@ -144,13 +146,14 @@ app.controller("dataController",function($firebaseArray,$scope){
 			console.log("post successful");
 
 			ref.child('post').child("time").child(time).child(order).set(this.newPost);
-			ref.child('post').child('all').child(order).set(this.newPost);
+			ref.child('post').child('all').child(All_order).set(this.newPost);
 			this.newPost = {};
+			//新增完order增加
 			order = order*1 + 1;
+			All_order = All_order*1 + 1;
 			ref.child('post').child(time).child('order').set(order);
-
+			ref.child('post').child('Allorder').set(All_order);
 			alert("新增成功");
-			// window.location = 'http://localhost/web/adminList.php';
 		}
 	}
 	// ----------------------------------------------------------------------
@@ -170,31 +173,13 @@ app.controller("dataController",function($firebaseArray,$scope){
 		}
 	}
 
-	this.test = function(){
-		console.log(this.show);
-	}
-
 	// 分頁排版
-	this.showData= function(){
+	this.currentPage = 0;
+    this.pageSize = 10;
+    this.numberOfPages=function(){
+        return Math.ceil(this.show.length/this.pageSize);                
+    }
 
-		var pagesShown = 1;
-	    var pageSize = 15;
-
-	    this.paginationLimit = function(data) {
-			return pageSize * pagesShown;
-	    };
-	    this.hasMoreItemsToShow = function() {
-	        return pagesShown < (this.show.length / pageSize);
-	    };
-	    this.showMoreItems = function() {
-	        pagesShown = pagesShown + 1;       
-	    };	
-	}
-
-	// 排版起始
-	this.getStart = function(){
-		return 0;
-	}
 
 	// ----------------------------------------------------------------------
 	// 公告管理-工具
@@ -319,13 +304,19 @@ app.controller("dataController",function($firebaseArray,$scope){
 	this.showData2= function(){
 
 		var pagesShown = 1;
-	    var pageSize = 10;
+	    var pageSize = 8;
 
 	    this.paginationLimit2 = function(data) {
 			return pageSize * pagesShown;
 	    };
-	    this.hasMoreItemsToShow2 = function() {
-	        return pagesShown < (this.show2.length / pageSize);
+	    
+	    this.hasMoreItemsToShow2 = function(d) {
+	    	if(d=="all"){
+	    		return pagesShown < (this.show.length / pageSize);
+	    	}
+	        else{
+	        	return pagesShown < (this.show2.length / pageSize);
+	        }
 	    };
 	    this.showMoreItems2 = function() {
 	        pagesShown = pagesShown + 1;       
