@@ -1,5 +1,5 @@
 <div class="btn-group-vertical right-bar
-            col-md-offset-3 col-md-6 col-md-offset-3
+            col-md-offset-2 col-md-8 col-md-offset-2
             col-sm-offset-4 col-sm-4 col-sm-offset-4
             col-xs-offset-3 col-xs-6 col-xs-offset-3" >
 <p class="link">研發處企劃組</p>

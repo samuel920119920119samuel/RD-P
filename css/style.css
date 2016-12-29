@@ -290,12 +290,7 @@ footer
 .indexPage .nav{
     /*font-family: 'Noto Sans TC', sans-serif;*/
     font-weight: 550;
-    font-size: 18px;
-}
-
-.indexPage .navbar-brand{
-    color: white;
-    font-family:DFKai-sb; /*標楷體*/
+    font-size: 17px;
 }
 
 .indexPage .postBox{
@@ -419,7 +414,7 @@ footer
     background-color: #990099;
     font-size: 18px;
     display: inline;
-    padding: .5em .8em .5em;
+    padding: .2em .8em .2em;
     font-size: 75%;
     line-height: 1;
     color: #fff;
@@ -432,7 +427,7 @@ footer
     background-color: #5bc0de;
     font-size: 15px;
     display: inline;
-    padding: .5em .8em .5em;
+    padding: .2em .8em .2em;
     font-size: 75%;
     line-height: 1;
     color: #fff;
@@ -445,7 +440,7 @@ footer
     background-color: #3e8f3e;
     font-size: 15px;
     display: inline;
-    padding: .5em .8em .5em;
+    padding: .2em .8em .2em;
     font-size: 75%;
     line-height: 1;
     color: #fff;
@@ -458,7 +453,7 @@ footer
     background-color: #e38d13;
     font-size: 15px;
     display: inline;
-    padding: .5em .8em .5em;
+    padding: .2em .8em .2em;
     font-size: 75%;
     line-height: 1;
     color: #fff;
@@ -470,16 +465,6 @@ footer
 
 
 /*---------------ryan----------*/
-
-/*bootstrap label*/
-.label{
-  font-size: 15px;
-}
-
-/*bootstrap label*/
-.badge{
-     background-color: LightSeaGreen  ;
-}
 
 /*Source in modal*/
 .indexPage .modal-body .showSource{
@@ -533,6 +518,7 @@ footer
     transition: opacity .3s 0s, visibility 0s 0s;
     opacity: 1;
 }*/
+
 .right-bar a{
         text-align: left;
         font-size: 1em;
@@ -554,6 +540,7 @@ footer
 .navbar-brand {
   padding: 0px !important;
 }
+
 .navbar-brand > img {
   height: 100%;
   padding: 10px 15px 10px 15px;
