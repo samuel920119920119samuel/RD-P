@@ -520,6 +520,7 @@ footer
 }*/
 
 .right-bar a{
+        font-family:"Microsoft JhengHei" !important;
         text-align: left;
         font-size: 1em;
 }
@@ -546,3 +547,8 @@ footer
   padding: 10px 15px 10px 15px;
   width: auto;
 }
+
+.nav{
+    font-family:"Microsoft JhengHei" !important;
+}
+
