@@ -33,7 +33,7 @@
 			$password = $_POST["inputPassword"];
 			$account = $_POST["inputAccount"];
 			// 輸入正確
-			if($account == 'rdp27056' && $password == 'rdp2705'){
+			if($account == 'rdp27056' && $password == 'rdp27056'){
 			    setcookie("login",'USER', time()+3600);
 			    header("Location: admin.php"); 
 			} 
