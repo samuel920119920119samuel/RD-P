@@ -33,18 +33,18 @@
 			$password = $_POST["inputPassword"];
 			$account = $_POST["inputAccount"];
 			// 輸入正確
-			if($account == '123' && $password == '123'){
+			if($account == 'rdp27056' && $password == 'rdp2705'){
 			    setcookie("login",'USER', time()+3600);
 			    header("Location: admin.php"); 
 			} 
 			// 輸入錯誤
 			else{
 				// 正確帳號 錯誤密碼
-				if($account == "123" && $password != '123'){
+				if($account == "rdp27056" && $password != 'rdp2705'){
 					$_SESSION['error'] = "Wrong_Password";
 				}
 				// 錯誤帳號 正確密碼
-				else if($account != "123" && $password == '123'){
+				else if($account != "rdp27056" && $password == 'rdp2705'){
 					$_SESSION['error'] = "Wrong_Account";
 				}
 				else{

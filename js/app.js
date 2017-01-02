@@ -133,7 +133,7 @@ app.controller("dataController",function($firebaseArray,$scope){
 
 	//連結資料庫中之子物件
 	this.post = $firebaseArray(ref.child("post"));
-
+	this.show = $firebaseArray(ref.child("post").child('all'));
 
 	// ----------------------------------------------------------------------
 	// 新增公告
@@ -150,7 +150,7 @@ app.controller("dataController",function($firebaseArray,$scope){
 		date = 0 + date.toString();
 	}
 	var time = d.getFullYear().toString() +  hour + date;
-	console.log(time);
+	// console.log(time);
 
 	//取得發文時間
 	getTime = function(){
@@ -182,6 +182,7 @@ app.controller("dataController",function($firebaseArray,$scope){
 	this.newPost.sourceURL="";
 	this.newPost.content="";
 	this.newPost.time="";
+	this.newPost.click=0;
 
 	// // 建立當日順序
 	var order;
@@ -196,6 +197,7 @@ app.controller("dataController",function($firebaseArray,$scope){
 	  		console.log(order);
 	  	}
 	  	All_order = snap.child('post').val().Allorder;
+	  	
 	});
 
 
@@ -211,6 +213,7 @@ app.controller("dataController",function($firebaseArray,$scope){
 			this.newPost.sourceURL = post.sourceURL;
 			this.newPost.content = post.content;
 			this.newPost.time = getTime();
+			this.newPost.click = 0;
 
 			console.log("post successful");
 
@@ -229,7 +232,6 @@ app.controller("dataController",function($firebaseArray,$scope){
 	// 公告管理-取得公告
 	// ----------------------------------------------------------------------
 
-	this.show = $firebaseArray(ref.child("post").child('all'));
 	// 日期順序
 	this.order;
 
@@ -271,7 +273,7 @@ app.controller("dataController",function($firebaseArray,$scope){
 	this.saveEdit = function(item){
 		if(item.type!="" && item.subject!="" && item.source!="" && item.sourceURL!="" && item.content!=""){
 			this.show.$save(item);
-			console.log(this.show2);
+			//console.log(this.show2);
 			this.show2.$save(item);
 			alert("編輯成功");
 		}
@@ -282,12 +284,12 @@ app.controller("dataController",function($firebaseArray,$scope){
 	this.show2 = [];
 
 
-
 	this.click = function(item){
-		console.log("into")
-		console.log(this.show)
+
+		// console.log("into")
+		// console.log(this.show)
 		this.show2 = localClick(this.show, item);
-		console.log(this.show2)
+		// console.log(this.show2)
 	}
 
 	localClick = function(data,item){
@@ -306,6 +308,7 @@ app.controller("dataController",function($firebaseArray,$scope){
 						sourceURL : data[i].sourceURL,
 						content : data[i].content,
 						time : data[i].time,
+						click : data[i].click,
 						id : data[i].$id
 					};
 				}
@@ -323,6 +326,7 @@ app.controller("dataController",function($firebaseArray,$scope){
 						sourceURL : data[i].sourceURL,
 						content : data[i].content,
 						time : data[i].time,
+						click : data[i].click,
 						id : data[i].$id
 					};
 				}
@@ -340,6 +344,7 @@ app.controller("dataController",function($firebaseArray,$scope){
 						sourceURL : data[i].sourceURL,
 						content : data[i].content,
 						time : data[i].time,
+						click : data[i].click,
 						id : data[i].$id
 					};
 				}
@@ -357,6 +362,7 @@ app.controller("dataController",function($firebaseArray,$scope){
 						sourceURL : data[i].sourceURL,
 						content : data[i].content,
 						time : data[i].time,
+						click : data[i].click,
 						id : data[i].$id
 					};
 				}
@@ -370,7 +376,7 @@ app.controller("dataController",function($firebaseArray,$scope){
 	});
 
 	// 分頁排版
-	this.showData2= function(){
+	this.showData2 = function(){
 
 		var pagesShown = 1;
 	    var pageSize = 8;
@@ -393,7 +399,7 @@ app.controller("dataController",function($firebaseArray,$scope){
 	}
 
 	// 取得標題class
-	this.getLabelStyle=function(item){
+	this.getLabelStyle = function(item){
 		if(item=="高教資訊"){
 			return 'styleEdu';
 		}
@@ -406,7 +412,14 @@ app.controller("dataController",function($firebaseArray,$scope){
 		else if(item=="焦點評論"){
 			return 'styleHigh'
 		}
+	}
 
+	//點閱率紀錄
+	this.clickCount = function(item){
+		item.click=item.click*1+1;
+		this.show.$save(item);
+		//console.log(this.show2);
+		this.show2.$save(item);
 	}
 
 

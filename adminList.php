@@ -137,6 +137,8 @@
 								            <h1 class="modal-title text-center" id="myModalLabel">瀏覽公告</h1>
 								        </div>
 								        <div class="modal-body" id="viewModal" >
+								        	<span class="label label-info">點擊人數：{{detail.click}}</span>
+								        	<br><br>
 
 								            <label for="postTitle">標題</label>
 								            <p class="show">{{detail.subject}}</p>

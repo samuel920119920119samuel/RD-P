@@ -293,6 +293,7 @@ footer
     font-size: 17px;
 }
 
+
 .indexPage .postBox{
     height: 100%;
     display: block;
@@ -408,6 +409,7 @@ footer
 .clickable {
     cursor: pointer;
 }
+
 
 /*分類標籤*/
 .indexPage .styleEdu{
@@ -536,6 +538,8 @@ footer
     .right-bar{
         display: none;       
     }
+
+ 
 }
 
 .navbar-brand {

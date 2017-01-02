@@ -4,6 +4,8 @@
     <title>國立中央大學 - 研究發展處 企劃組</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- loader css -->
+    <link rel="stylesheet" href="css/loaders.css" />
     <!-- bootstrap css-->
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/bootstrap-theme.css" />
@@ -24,7 +26,6 @@
     <link rel="stylesheet" href="css/style.css" />
  
 
-
 </head>
 
 <body class="indexPage" id="top" ng-controller="ScrollCtrl">
@@ -33,7 +34,7 @@
 <ng-include src="'layouts/navbar.php'"></ng-include>    
   
 <div class="container">
-    <div ng-controller="dataController as dataC">
+    <div ng-controller="dataController as dataC" ng-init="dataC.postBody=false;dataC.postLoad='styleLoad1';">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="active"><a href="#all" aria-controls="all" role="tab" data-toggle="tab" >所有公告</a></li>
@@ -48,19 +49,45 @@
             <!-- 所有公告 -->
             <div role="tabpanel" class="tab-pane fade in active" id="all" ng-init="dataC.showData2();">
                 <div class="col-md-8">
-                    <section ng-repeat="detail in dataC.show | orderBy: '-time' | filter:search:strict | limitTo: dataC.paginationLimit2()">
-                        <!-- postBox -->
-                        <div class="postBox" data-toggle="modal" data-target="#ShowAll{{detail.$id}}" ng-init="myStyle=dataC.getLabelStyle(detail.type)">
-                            <ng-include src="'layouts/postBox.php'"></ng-include> 
+                    <!-- load view -->
+                    <div id = "postLoad" class="loader">
+                        <div style="background:#b60231;width:20%;float:left;">
+                            <div class="loader-inner pacman" style="margin-left:3em;">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
                         </div>
-                        <!-- modal for Show -->
-                        <div class="modal fade" id="ShowAll{{detail.$id}}" tabindex="-1" role="dialog">
-                            <ng-include src="'layouts/modalShow.php'"></ng-include> 
-                        </div>                        
-                    </section>
-                
-                    <div class="pagination pagination-centered">
-                        <button class="show-more-btn" ng-show="dataC.hasMoreItemsToShow2('all')" ng-click="dataC.showMoreItems2()">Show more</button>
+                        <div style="background:#b60231;width:30%;float:left;height:50px;display:block;padding-top:5px;text-align:right;">
+                            <!-- <marquee scrollamount="15"><span style="margin-left:6em;color:white;font-weight:600;font-size:30px;">Loading</span></marquee> -->
+                            <span id="load" style="margin-left:30%;color:white;font-weight:600;font-size:30px;">Loading</span>
+                        </div>
+                        <div style="padding-left:2%;background:#b60231;width:50%;float:left;height:50px;padding-top:17px;">
+                            <div class="loader-inner ball-pulse">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- complete view -->
+                    <div id="postBody">
+                        <section ng-repeat="detail in dataC.show | orderBy: '-time' | filter:search:strict | limitTo: dataC.paginationLimit2()">
+                            <!-- postBox -->
+                            <div class="postBox" data-toggle="modal" data-target="#ShowAll{{detail.$id}}" ng-init="myStyle=dataC.getLabelStyle(detail.type)" ng-click="dataC.clickCount(detail)">
+                                <ng-include src="'layouts/postBox.php'"></ng-include> 
+                            </div>
+                            <!-- modal for Show -->
+                            <div class="modal fade" id="ShowAll{{detail.$id}}" tabindex="-1" role="dialog">
+                                <ng-include src="'layouts/modalShow.php'"></ng-include> 
+                            </div>                        
+                        </section>
+                        <!-- pagination -->
+                        <div class="pagination pagination-centered">
+                            <button class="show-more-btn" ng-show="dataC.hasMoreItemsToShow2('all')" ng-click="dataC.showMoreItems2()">Show more</button>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 tools">
@@ -191,13 +218,21 @@
         <div class="fixed">
             <button type="button" class="btn btn-info btn-circle btn-lg" ng-click="gotoElement('top')"><i class="glyphicon glyphicon-chevron-up"></i></button>
         </div>
+
+        <!-- Loading轉圈圈 -->
+        <script type="text/javascript">
+            setTimeout(function() {
+                document.getElementById('postLoad').style.display='none';
+            },2300);
+        </script>
+
     </div>
 
 </div>
 
 <!-- Footer -->  
 <ng-include src="'layouts/footer.php'"></ng-include>
-    
+
 </body>
 </html>
 
