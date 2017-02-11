@@ -91,6 +91,10 @@
                     </div>
                 </div>
                 <div class="col-md-4 tools">
+                	<!-- logo -->
+                	<div class="col-md-offset-1 col-md-10">
+                		<img src="image/logo.jpg" class="img-responsive img-thumbnail" alt="高教潛力觀測站">
+                	</div>
                     <!-- 搜尋 -->
                     <div class="searchArea
                                 col-md-offset-2 col-md-8 col-md-offset-2
@@ -121,9 +125,13 @@
                     </div>
                 </div>
                 <div class="col-md-4 tools">
+                	<!-- logo -->
+                	<div class="col-md-offset-1 col-md-10">
+                		<img src="image/logo.jpg" class="img-responsive img-thumbnail" alt="高教潛力觀測站">
+                	</div>
                     <!-- 搜尋 -->
                     <div class="searchArea col-md-offset-2 col-md-8 ">
-                          <input type="text" class="form-control col-md-4" placeholder="搜尋標題" ng-model="search.subject">
+                        <input type="text" class="form-control col-md-4" placeholder="搜尋標題" ng-model="search.subject">
                     </div>
                     <!-- 網站連結 -->
                     <ng-include src="'layouts/siteLinks.php'"></ng-include> 
@@ -148,9 +156,13 @@
                     </div>
                 </div>
                 <div class="col-md-4 tools">
+                    <!-- logo -->
+                	<div class="col-md-offset-1 col-md-10">
+                		<img src="image/logo.jpg" class="img-responsive img-thumbnail" alt="高教潛力觀測站">
+                	</div>
                     <!-- 搜尋 -->
                     <div class="searchArea col-md-offset-2 col-md-8 ">
-                          <input type="text" class="form-control col-md-4" placeholder="搜尋標題" ng-model="search.subject">
+                        <input type="text" class="form-control col-md-4" placeholder="搜尋標題" ng-model="search.subject">
                     </div>
                     <!-- 網站連結 -->
                     <ng-include src="'layouts/siteLinks.php'"></ng-include> 
@@ -175,9 +187,13 @@
                     </div>
                 </div>
                 <div class="col-md-4 tools">
+                    <!-- logo -->
+                	<div class="col-md-offset-1 col-md-10">
+                		<img src="image/logo.jpg" class="img-responsive img-thumbnail" alt="高教潛力觀測站">
+                	</div>
                     <!-- 搜尋 -->
                     <div class="searchArea col-md-offset-2 col-md-8 ">
-                          <input type="text" class="form-control col-md-4" placeholder="搜尋標題" ng-model="search.subject">
+                         <input type="text" class="form-control col-md-4" placeholder="搜尋標題" ng-model="search.subject">
                     </div>
                     <!-- 網站連結 -->
                     <ng-include src="'layouts/siteLinks.php'"></ng-include> 
@@ -203,9 +219,13 @@
                     </div>
                 </div>
                 <div class="col-md-4 tools">
+                    <!-- logo -->
+                	<div class="col-md-offset-1 col-md-10">
+                		<img src="image/logo.jpg" class="img-responsive img-thumbnail" alt="高教潛力觀測站">
+                	</div>
                     <!-- 搜尋 -->
                     <div class="searchArea col-md-offset-2 col-md-8 ">
-                          <input type="text" class="form-control col-md-4" placeholder="搜尋標題" ng-model="search.subject">
+                        <input type="text" class="form-control col-md-4" placeholder="搜尋標題" ng-model="search.subject">
                     </div>
                     <!-- 網站連結 -->
                     <ng-include src="'layouts/siteLinks.php'"></ng-include>                   

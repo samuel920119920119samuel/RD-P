@@ -556,3 +556,7 @@ footer
     font-family:"Microsoft JhengHei" !important;
 }
 
+.logo{
+    max-width: 100%;
+}
+
