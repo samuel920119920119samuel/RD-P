@@ -1,14 +1,17 @@
 <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                <!-- logo -->
+                <a class="navbar-brand" href="http://www.ncu.edu.tw"><img src="image/NCULogo.svg.png"></a>
+                <!-- collapsed -->           
+                <button type="button"  class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                     <span class="sr-only">Toggle Navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <!-- logo -->
-                <a class="navbar-brand" href="http://www.ncu.edu.tw"><img src="image/NCULogo.svg.png"></a>
+                <!-- 網站名稱 -->
+               <button type="button" class="navbar-toggle" style="color:white; font-family: Microsoft JhengHei"; >高教潛力議題觀測站</button> 
           </div>
           <ul class="nav navbar-nav collapse navbar-collapse" id="app-navbar-collapse">
               <li><a href="http://www.ncu.edu.tw/~ncu7020/index.php">研發處</a></li>

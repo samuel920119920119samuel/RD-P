@@ -560,3 +560,7 @@ footer
     max-width: 100%;
 }
 
+..nav #title{
+    color: white;
+}
+
