@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 /*********************************************************************************/
 /*          log in          */
 /*********************************************************************************/
@@ -558,9 +558,5 @@ footer
 
 .logo{
     max-width: 100%;
-}
-
-..nav #title{
-    color: white;
 }
 
