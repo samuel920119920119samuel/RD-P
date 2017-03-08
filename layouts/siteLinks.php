@@ -9,7 +9,7 @@
 <a href="http://www.ncu.edu.tw/~ncu7020/Project/index.php" class="btn btn-default btn-sm" role="button">校務發展計畫</a>
 <a href="http://www.ncu.edu.tw/~ncu7020/Project/record.php" class="btn btn-default btn-sm" role="button">校務發展委員會議</a>
 <a href="http://www.ncu.edu.tw/~ncu7020/Project/newCampus.php" class="btn btn-default btn-sm " role="button">八德校地籌設</a>
-<a href="http://www.ncu.edu.tw/~ncu7020/self_evaluation/update.php" class="btn btn-default btn-sm " role="button">校務評鑑</a>
+<a href="https://ncu.edu.tw/assessment/" class="btn btn-default btn-sm " role="button">校務評鑑</a>
 <a href="http://www.ncu.edu.tw/~ncu7020/Project/integrationGuide.php" class="btn btn-default btn-sm " role="button">教育部統合視導</a>
-<a href="/" class="btn btn-default btn-sm active" role="button">高教潛力議題觀測站</a>
+<a href="/issue" class="btn btn-default btn-sm active" role="button">高教潛力議題觀測站</a>
 </div>

@@ -23,9 +23,9 @@
                       <li><a href="http://www.ncu.edu.tw/~ncu7020/Project/index.php">校務發展計畫</a></li>
                       <li><a href="http://www.ncu.edu.tw/~ncu7020/Project/record.php">校務發展委員會議</a></li>
                       <li><a href="http://www.ncu.edu.tw/~ncu7020/Project/newCampus.php">八德校地籌設</a></li>
-                      <li><a href="http://www.ncu.edu.tw/~ncu7020/self_evaluation/update.php">校務評鑑</a></li>
+                      <li><a href="https://ncu.edu.tw/assessment/">校務評鑑</a></li>
                       <li><a href="http://www.ncu.edu.tw/~ncu7020/Project/integrationGuide.php">教育部統合視導</a></li>
-                      <li class="active"><a href="/">高教潛力議題觀測站</a></li>
+                      <li class="active"><a href="/issue">高教潛力議題觀測站</a></li>
                   </ul>
               </li>
               <li><a href="http://www.ncu.edu.tw/~ncu7020/Research/">研究推動組</a></li>
